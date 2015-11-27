@@ -1,0 +1,23 @@
+{
+  "name": "react-preload",
+  "version": "0.0.1",
+  "description": "react-preload",
+  "main": "index.js",
+  "private": false,
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  },
+  "keywords": [
+    "h5"
+  ],
+  "author": "jay",
+  "license": "MIT",
+  "dependencies": {
+    "jsx-loader": "^0.13.2",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
