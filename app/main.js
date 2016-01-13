@@ -1,10 +1,9 @@
-var React = require('react'),
-	ReactDOM = require("react-dom"),
-    Preload = require('./component/preload.js');
-
-
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Preload from './component/preload.js';
 
 var data = {
+    isDebug: true,
     sources: {
         imgs: {
             source: [
@@ -12,26 +11,57 @@ var data = {
                 "./images/b1.jpg"
             ],
             callback: function() {
-                // alert("队列1完成");
+                // console.log("队列1完成");
             }
         },
         audio: {
             source: [
                 "./audio/a.mp3",
                 "./audio/b.mp3"
-            ],
-           callback: function() {
-               //alert(2);
-           }
-
-       },
-    },
-    config: {
-        timeOut: 11,
-        timeOutCB: function(){
-            console.log("资源加载超时");
+            ]
         },
+        imgs2: {
+            source: [
+                "./images/b3.jpg",
+                "./images/b4.jpg",
+                "http://7xl041.com1.z0.glb.clouddn.com/OrthographicCamera.png",
+                "http://7xl041.com1.z0.glb.clouddn.com/audio.gif",
+            ],
+            callback: function() {
+                // console.log("队列3完成");
+            }
+        }
+    },
+    // loadingOverTime: 3,
+    // loadingOverTimeCB: function(res) {
+    //     console.log("资源加载超时：", res);
+    // },
+    // connector: {
+    //     int1: {
+    //         url: 'http://localhost/test/index.php?callback=read&city=上海市',
+    //         jsonp: true
+    //     },
+    //     int2: {
+    //         url: 'http://localhost/test/index.php?callback=read&city=深圳市',
+    //         jsonp: false,
+    //         callback: function(data) {
+    //             console.log("同步：", data);
+    //         }
+    //     }
+    // },
+    progress: function(completedCount, total) {
+        // console.log(total);
+        // console.log(Math.floor((completedCount / total) * 100));
+    },
+    completeLoad: function() {
+        // console.log("已完成所有加载项");
+        document.getElementById("loadingBox").className = "box hide";
     }
+};
+
+function read() {
+    console.log("异步：", arguments[0])
 }
 
-ReactDOM.render(<Preload data={data}/> , document.getElementById("loading"));
+
+ReactDOM.render( < Preload data={data}/ > , document.getElementById("loading"));

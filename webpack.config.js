@@ -4,9 +4,12 @@ module.exports = {
     path: './build',
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'jsx-loader' }
+      { test: /\.js$/, loader: 'babel-loader?presets[]=es2015&presets[]=react' }
     ]
   }
 };
