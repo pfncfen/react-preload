@@ -2,6 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Preload from './component/preload.js';
 
+var loadingElm = (
+        <div className="box" id="loadingBox">
+            <div id="floatingCirclesG">
+                <div className="f_circleG" id="frotateG_01"></div>
+                <div className="f_circleG" id="frotateG_02"></div>
+                <div className="f_circleG" id="frotateG_03"></div>
+                <div className="f_circleG" id="frotateG_04"></div>
+                <div className="f_circleG" id="frotateG_05"></div>
+                <div className="f_circleG" id="frotateG_06"></div>
+                <div className="f_circleG" id="frotateG_07"></div>
+                <div className="f_circleG" id="frotateG_08"></div>
+            </div>
+        </div>
+);
+
 var data = {
     isDebug: true,
     sources: {
@@ -64,4 +79,4 @@ function read() {
 }
 
 
-ReactDOM.render( < Preload data={data}/ > , document.getElementById("loading"));
+ReactDOM.render( < Preload loadingElm={loadingElm} data={data}/ > , document.getElementById("loading"));

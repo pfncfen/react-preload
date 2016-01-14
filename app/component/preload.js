@@ -9,6 +9,22 @@ class Preload extends React.Component {
         super(props);
         let opts = props.data;
 
+        let defaultElm = (
+                <div className="box" id="loadingBox">
+                    <div id="floatingCirclesG">
+                        <div className="f_circleG" id="frotateG_01"></div>
+                        <div className="f_circleG" id="frotateG_02"></div>
+                        <div className="f_circleG" id="frotateG_03"></div>
+                        <div className="f_circleG" id="frotateG_04"></div>
+                        <div className="f_circleG" id="frotateG_05"></div>
+                        <div className="f_circleG" id="frotateG_06"></div>
+                        <div className="f_circleG" id="frotateG_07"></div>
+                        <div className="f_circleG" id="frotateG_08"></div>
+                    </div>
+                </div>
+        )
+
+        // console.log(props.loadingElm);
 
         // this.lib = new Lib(props.data);
         this.isDebug = opts.isDebug || false;
@@ -18,6 +34,7 @@ class Preload extends React.Component {
         this.completeLoad = opts.completeLoad || function(){};
         this.timeOut = opts.loadingOverTime || 15;
         this.timeOutCB = opts.loadingOverTimeCB || function(){};
+        this.loadingElm = props.loadingElm || defaultElm;
 
         //业务逻辑所需参数
         this.params = {
@@ -386,20 +403,7 @@ class Preload extends React.Component {
     	// console.log(this.props.data);
     	// this.props.data.test = [1,2,3,4];
 
-    	return (										//loading界面
-            <div className="box" id="loadingBox">
-    			<div id="floatingCirclesG">
-                    <div className="f_circleG" id="frotateG_01"></div>
-                    <div className="f_circleG" id="frotateG_02"></div>
-                    <div className="f_circleG" id="frotateG_03"></div>
-                    <div className="f_circleG" id="frotateG_04"></div>
-                    <div className="f_circleG" id="frotateG_05"></div>
-                    <div className="f_circleG" id="frotateG_06"></div>
-                    <div className="f_circleG" id="frotateG_07"></div>
-                    <div className="f_circleG" id="frotateG_08"></div>
-                </div>
-            </div>
-		)
+    	return self.loadingElm
         // return this.props.loadingIndicator ? this.props.loadingIndicator : opts.loadingIndicator;
     }
 };
