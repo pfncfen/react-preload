@@ -10,10 +10,13 @@ npm run dev
 ```
 [http://localhost:8080/](http://localhost:8080/)
 
+[demo](http://jayzou.github.io/react-preload/index.html)
+
 ##npm
 ```
 npm install react-jay-preload
 ```
+
 
 ##Usage
 ```javascript
