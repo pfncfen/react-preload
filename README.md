@@ -1,5 +1,7 @@
 # react-preload
-react preload component
+react实现预加载组件，目前关于超时功能还未完善。
+[ES5](https://github.com/jayZOU/preload)
+[ES6](https://github.com/jayZOU/preload/tree/dev)
 ##install
 ```
 git clone https://github.com/jayZOU/react-preload.git
@@ -23,7 +25,7 @@ import Preload from './component/preload.js';
     *   Preload 资源预加载组件
     *   @author jayzou
     *   @time 2016-1-14
-    *   @version 0.0.7
+    *   @version 0.0.8
     *   @class Preload
     *   @param {object} sources             必填  加载队列容器，支持队列加载以及加载一个队列后传入回调
     *   @param {boolean} isDebug            选填      是否开启debug选项，用于移动端调试，默认false
@@ -116,4 +118,4 @@ ReactDOM.render( < Preload loadingElm={loadingElm} data={data}/ > , document.get
 ```
 
 ##Usage
-[MIT]()
+[MIT](https://github.com/jayZOU/react-preload/blob/master/LICENSE)
